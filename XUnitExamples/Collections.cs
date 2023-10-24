@@ -44,7 +44,7 @@ namespace XUnitExamples
     } 
 
 
-    // when we use classficture we tell xunit which should remain same for all the tests in this class 
+    // when we use classfixture we tell xunit which should remain same for all the tests in this class 
     public class WithClassFixture_1 : IClassFixture<GuidGenerator>, IDisposable
     {
         private readonly GuidGenerator _guidGenerator;
@@ -121,7 +121,7 @@ namespace XUnitExamples
             _outputHelper.WriteLine("disposed with classfixture");
         }
     } 
-    
+    // each time the fixture remains same for all the tests in a class
     public class WithClassFixture_2 : IClassFixture<GuidGenerator>, IDisposable
     {
         private readonly GuidGenerator _guidGenerator;
@@ -199,6 +199,7 @@ namespace XUnitExamples
         }
     }
 
+    // by defining a collection , anything which uses the collection will use the same stuff even in different classes
     [Collection("GuidGenerator_collection")]
     public class WithCollectionFixture_1 : IDisposable
     {
@@ -355,6 +356,8 @@ namespace XUnitExamples
 
 
     //helpers 
+
+    // this ficture class can contain anything i guess...
     public class GuidGenerator
     {
         public Guid RandomGuid { get; } = Guid.NewGuid();
