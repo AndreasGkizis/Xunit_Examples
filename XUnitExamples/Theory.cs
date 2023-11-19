@@ -21,7 +21,7 @@ namespace XUnitExamples
         [InlineData(2, '+', 2, 4)]
         public void PerformOperation_Add_returnsNumber(double num1, char operation, double num2, double expectedResult)
         {
-            double result = SomeApp.PerformOperation.RunOp(num1, operation, num2);
+            double result = SomeApp.PerformOperation.RunOperation(num1, operation, num2);
             Assert.Equal(result, expectedResult);
         }
 
@@ -33,12 +33,12 @@ namespace XUnitExamples
         {
             if (expectedResult is double)
             {
-                double result = SomeApp.PerformOperation.RunOp(num1, operation, num2);
+                double result = SomeApp.PerformOperation.RunOperation(num1, operation, num2);
                 Assert.Equal(result, expectedResult);
             }
             else if (expectedResult is Exception)
             {
-                Assert.Throws<DivideByZeroException>(() => SomeApp.PerformOperation.RunOp(num1, operation, num2));
+                Assert.Throws<DivideByZeroException>(() => SomeApp.PerformOperation.RunOperation(num1, operation, num2));
             }
         }
         // Same as member data but uses a class 
@@ -49,12 +49,12 @@ namespace XUnitExamples
         {
             if (expectedResult is double)
             {
-                double result = SomeApp.PerformOperation.RunOp(num1, operation, num2);
+                double result = SomeApp.PerformOperation.RunOperation(num1, operation, num2);
                 Assert.Equal(result, expectedResult);
             }
             else if (expectedResult is Exception)
             {
-                Assert.Throws<DivideByZeroException>(() => SomeApp.PerformOperation.RunOp(num1, operation, num2));
+                Assert.Throws<DivideByZeroException>(() => SomeApp.PerformOperation.RunOperation(num1, operation, num2));
             }
         }
 

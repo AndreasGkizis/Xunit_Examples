@@ -12,7 +12,7 @@ public class FactBasics
     [Fact]
     public void PerformOperation_Add_returnsNumber()
     {
-        double result = PerformOperation.RunOp(1, '+', 1);
+        double result = PerformOperation.RunOperation(1, '+', 1);
 
         Assert.Equal(2, result);
     }
@@ -20,7 +20,7 @@ public class FactBasics
     [Fact(DisplayName = "Adding 1+1")]
     public void PerformOperation_Add_returnsNumber_CustomName()
     {
-        double result = PerformOperation.RunOp(1, '+', 1);
+        double result = PerformOperation.RunOperation(1, '+', 1);
 
         Assert.Equal(2, result);
     }
@@ -30,7 +30,7 @@ public class FactBasics
     [Fact(Skip = "This is broken for now and should be skipped")]
     public void PerformOperation_Add_willSkip()
     {
-        double result = PerformOperation.RunOp(1, '+', 3);
+        double result = PerformOperation.RunOperation(1, '+', 3);
 
         Assert.Equal(2, result);
     }
