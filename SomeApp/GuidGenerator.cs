@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SomeApp
 {
-    public class GuidGenerator
-    {
-        public Guid RandomGuid { get; } = Guid.NewGuid();
-    }
+	public class GuidGenerator
+	{
+		public Guid RandomGuid { get; } = Guid.NewGuid();
+	}
 }
